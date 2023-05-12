@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("pipi.jpg");
+            font-style: oblique;
+            color: white;
+        }
+        table {
+            border-color: red;
+            border-style: none;
+            background-color: black;
+            padding: 10px;
+        }
+        p:hover{
+            padding-top: 10px;
+            color: black;
+            background-color: yellow;
+        }
+        button:hover{
+            color: blue;
+            background-color: yellow;
+        }
+        button:active{
+            background-color: green;
+            color: red;
+        }
+        input {
+            background-color:white;
+        }
+        h2 {
+            font-style:normal;
+            color: black;
+        }
+    </style>
+</head> 
+<body>
+    <center>
+        <h2>PERSONAL INFORMATION</h2>
+        <table>
+            <tr>
+                <td>
+                    <br>
+            <p>First Name: <input id="myFirst" onkeydown="count()"><br><br></p></td></tr>
+            <tr>
+                <td>
+            <p>Last Name: <input id="myLast" onkeydown="count()"><br><br></p>
+            </td></tr>
+            <tr>
+            <td>
+            <p>Birth Year: <input id="myBirth"><br><br></p>
+            </td>
+        </tr>
+                <tr>
+                    <td><p><center><button onclick="sub()">SUBMIT</button><br><br>
+            First Name is pressed <span id="count">0</span> Times <br>
+            Your age is <span id="myBirth1">0</span></p></center>
+            </td>
+            </tr>
+        </p>
+        </table>
+    </div>
+    </center>
+    <script>
+
+        function count() {
+            var count = document.getElementById("count").innerHTML;
+
+            document.getElementById("count").innerHTML = Number(count) + 1;
+        }
+        function sub() {
+            alert("Your Information is Saved")
+        }
+        var myBirth = document.getElementById("myBirth");
+        var myBirth1 = document.getElementById("myBirth1");
+        var y = 2023
+
+        myBirth.addEventListener("keyup", function () {
+            var val = myBirth.value;
+            myBirth1.innerText = (y - val);
+        });
+    </script>
+</body>
+
+</html>
